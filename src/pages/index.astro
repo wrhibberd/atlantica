@@ -17,18 +17,15 @@ import ChangingLogo from "../components/ChangingLogo.astro";
 		<main class="h-full grow relative">
 			<h1 class="sr-only">Atlantica</h1>
 			<video
-				class="w-full h-full object-cover absolute inset-0"
+				class="w-full h-full object-cover absolute inset-0 saturate-[0.2]"
 				autoplay
 				muted
 				loop
 				playsinline
 				preload="metadata"
-				src="https://2050today.org/wp-content/uploads/2020/07/Video-Placeholder.mp4?_=1"
+				src="/atl_hex.mp4#t=0.1"
 			>
-				<source
-					type="video/mp4"
-					src="https://2050today.org/wp-content/uploads/2020/07/Video-Placeholder.mp4?_=1"
-				/>
+				<source type="video/mp4" src="/atl_hex.mp4#t=0.1" />
 			</video>
 			<ChangingLogo />
 		</main>
