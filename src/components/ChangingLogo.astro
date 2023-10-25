@@ -1,0 +1,95 @@
+---
+import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
+import logo2 from "../assets/logos/Atlantica_Logo_White_2.png";
+import logo3 from "../assets/logos/Atlantica_Logo_White_3.png";
+import logo4 from "../assets/logos/Atlantica_Logo_White_4.png";
+import logo5 from "../assets/logos/Atlantica_Logo_White_5.png";
+import logo6 from "../assets/logos/Atlantica_Logo_White_6.png";
+
+import { Image } from "astro:assets";
+---
+
+<div class="relative w-full h-screen flex justify-center items-center">
+	<div class="absolute inset-0 flex items-center justify-center">
+		<Image
+			src={logo1}
+			alt="Atlantica Logo 1"
+			class="max-w-[900px] mx-auto transition-opacity duration-300 opacity-100"
+			loading={"eager"}
+			widths={[300, 600, 900]}
+		/>
+	</div>
+	<div class="absolute inset-0 flex items-center justify-center">
+		<Image
+			src={logo2}
+			alt="Atlantica Logo 2"
+			class="opacity-0 max-w-[900px] mx-auto transition-opacity duration-300"
+			loading={"eager"}
+			widths={[300, 600, 900]}
+		/>
+	</div>
+	<div class="absolute inset-0 flex items-center justify-center">
+		<Image
+			src={logo3}
+			alt="Atlantica Logo 3"
+			class="opacity-0 max-w-[900px] mx-auto transition-opacity duration-300"
+			loading={"eager"}
+			widths={[300, 600, 900]}
+		/>
+	</div>
+	<div class="absolute inset-0 flex items-center justify-center">
+		<Image
+			src={logo4}
+			alt="Atlantica Logo 4"
+			class="opacity-0 max-w-[900px] mx-auto transition-opacity duration-300"
+			loading={"eager"}
+			widths={[300, 600, 900]}
+		/>
+	</div>
+	<div class="absolute inset-0 flex items-center justify-center">
+		<Image
+			src={logo5}
+			alt="Atlantica Logo 5"
+			class="opacity-0 max-w-[900px] mx-auto transition-opacity duration-300"
+			loading={"eager"}
+			widths={[300, 600, 900]}
+		/>
+	</div>
+	<div class="absolute inset-0 flex items-center justify-center">
+		<Image
+			src={logo6}
+			alt="Atlantica Logo 6"
+			class="opacity-0 max-w-[900px] mx-auto transition-opacity duration-300"
+			loading={"eager"}
+			widths={[300, 600, 900]}
+		/>
+	</div>
+</div>
+
+<script>
+	const images = document.querySelectorAll("img"); // select all images
+	let currentIndex = 0; // set initial index to 0
+
+	function cycleImages() {
+		// console.log("cycleImages");
+		images[currentIndex].classList.remove("opacity-100"); // hide current image
+		images[currentIndex].classList.add("opacity-0"); // hide current image
+		currentIndex = (currentIndex + 1) % images.length; // increment index and wrap around
+		images[currentIndex].classList.remove("opacity-0"); // show next image
+		images[currentIndex].classList.add("opacity-100"); // show next image
+	}
+
+	Promise.all(
+		Array.from(document.images)
+			.filter((img) => !img.complete)
+			.map(
+				(img) =>
+					new Promise((resolve) => {
+						img.onload = img.onerror = resolve;
+					})
+			)
+	).then(() => {
+		// console.log("images finished loading");
+		setInterval(cycleImages, 600);
+	});
+</script>

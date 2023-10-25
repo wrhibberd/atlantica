@@ -1,0 +1,34 @@
+---
+import ChangingLogo from "../components/ChangingLogo.astro";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Atlantica</title>
+	</head>
+	<body class="min-h-screen h-full w-full bg-black text-white flex flex-col">
+		<main class="h-full grow relative">
+			<h1 class="sr-only">Atlantica</h1>
+			<video
+				class="w-full h-full object-cover absolute inset-0"
+				autoplay
+				muted
+				loop
+				playsinline
+				preload="metadata"
+				src="https://2050today.org/wp-content/uploads/2020/07/Video-Placeholder.mp4?_=1"
+			>
+				<source
+					type="video/mp4"
+					src="https://2050today.org/wp-content/uploads/2020/07/Video-Placeholder.mp4?_=1"
+				/>
+			</video>
+			<ChangingLogo />
+		</main>
+	</body>
+</html>
