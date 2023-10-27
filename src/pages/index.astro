@@ -1,34 +1,43 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import Menu from "../components/Menu.astro";
 import ChangingLogo from "../components/ChangingLogo.astro";
+
+const title = "Atlantica";
+const description =
+	"- towards a pan-Atlantic festival of contemporary art and cultural enquiry";
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<!-- TODO remove on prod -->
-		<meta name="robots" content="noindex,nofollow" />
-		<title>Atlantica</title>
-	</head>
-	<body class="min-h-screen h-full w-full bg-black text-white flex flex-col">
-		<main class="h-full grow relative">
-			<h1 class="sr-only">Atlantica</h1>
-			<video
-				class="w-full h-full object-cover absolute saturate-0"
-				autoplay
-				muted
-				loop
-				playsinline
-				preload="metadata"
-				src="/atl_hex.mp4#t=0.1"
-			>
-				<source type="video/mp4" src="/atl_hex.mp4#t=0.1" />
-			</video>
-			<ChangingLogo />
-			<div class="absolute inset-0 bg-[red] mix-blend-overlay"></div>
-		</main>
-	</body>
-</html>
+<Layout {title} {description}>
+	<main class="h-full grow relative selection:text-black selection:bg-white">
+		<h1 class="sr-only">Atlantica</h1>
+		<video
+			class="w-full h-full object-cover absolute saturate-0 pointer-events-none"
+			autoplay
+			muted
+			loop
+			playsinline
+			preload="metadata"
+			src="/atl_hex.mp4#t=0.1"
+		>
+			<source type="video/mp4" src="/atl_hex.mp4#t=0.1" />
+		</video>
+		<div
+			class="relative w-full h-screen flex flex-col justify-center items-center px-4 md:px-8"
+		>
+			<div class="relative w-full h-32 md:h-64">
+				<ChangingLogo imageClass="h-32 md:h-64" />
+			</div>
+			<p class="text-white">
+				- towards a pan-Atlantic festival of contemporary art and
+				cultural enquiry
+			</p>
+		</div>
+
+		<div
+			class="absolute inset-0 bg-[red] mix-blend-overlay pointer-events-none"
+		>
+		</div>
+	</main>
+	<Menu />
+</Layout>

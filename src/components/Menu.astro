@@ -1,0 +1,204 @@
+---
+import { Image } from "astro:assets";
+import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
+---
+
+<nav
+	id="menu"
+	class="fixed flex-col items-center inset-0 p-4 md:p-9 bg-black text-white opacity-0 -translate-y-100 hidden"
+>
+	<Image
+		id="logo"
+		src={logo1}
+		alt="Atlantica Logo"
+		widths={[300, 600, 900]}
+		class="h-8 object-contain opacity-0 -translate-y-100"
+	/>
+	<ul
+		class="flex flex-col grow items-center justify-center w-full h-full text-center space-y-8"
+	>
+		<li><a href="/about">About</a></li>
+		<li>
+			<a href="mailto:mail@atlantica.art">Contact</a>
+		</li>
+		<li>
+			<p>Related Projects</p>
+			<a href="https://theatlantic.org/" target="_blank"
+				>The Atlantic Project</a
+			>
+		</li>
+	</ul>
+</nav>
+<button
+	id="menuButton"
+	class="flex flex-col justify-center w-8 h-8 absolute top-4 md:top-8 right-4 md:right-8"
+	aria-label="toggle menu"
+>
+	<span id="topBar" class="w-full h-px bg-white mb-2"></span>
+	<span id="bottomBar" class="w-full h-px bg-white mt-2"></span>
+</button>
+
+<script>
+	import { manifest } from "astro:ssr-manifest";
+	import { animate, stagger, timeline } from "motion";
+
+	const menu = () => {
+		// variables
+		const menuButton = document.getElementById("menuButton") as any;
+		const menu = document.getElementById("menu") as any;
+
+		// sequences
+		const openMenuSequence = [
+			// [
+			// 	"main",
+			// 	{
+			// 		opacity: [1, 0],
+			// 	},
+			// ],
+			[
+				"#menu",
+				{
+					opacity: [0, 1],
+					y: ["-100%", "0%"],
+				},
+				{ at: "<" },
+			],
+			[
+				"#logo",
+				{
+					opacity: [0, 1],
+					y: ["-100%", "0%"],
+				},
+				{
+					at: "+.300",
+				},
+			],
+		] as any;
+
+		const closeMenuSequence = [
+			[
+				"#logo",
+				{
+					opacity: [1, 0],
+					y: ["0%", "-100%"],
+				},
+			],
+			[
+				"#menu",
+				{
+					opacity: [1, 0],
+					y: ["0%", "-100%"],
+				},
+				{
+					at: "+.300",
+				},
+			],
+			// [
+			// 	"main",
+			// 	{
+			// 		opacity: [0, 1],
+			// 	},
+			// 	{ at: "<" },
+			// ],
+		] as any;
+
+		const openMenuButton = [
+			[
+				"#topBar",
+				{
+					marginBottom: ["0.5rem", "0rem"],
+				},
+			],
+			[
+				"#bottomBar",
+				{
+					marginTop: ["0.5rem", "0rem"],
+				},
+				{ at: "<" },
+			],
+			[
+				"#topBar",
+				{
+					rotate: ["0deg", "45deg"],
+				},
+			],
+			[
+				"#bottomBar",
+				{
+					rotate: ["0deg", "-45deg"],
+				},
+				{ at: "<" },
+			],
+		] as any;
+
+		const closeMenuButton = [
+			[
+				"#topBar",
+				{
+					rotate: ["45deg", "0deg"],
+				},
+			],
+			[
+				"#bottomBar",
+				{
+					rotate: ["-45deg", "0deg"],
+				},
+				{ at: "<" },
+			],
+			[
+				"#topBar",
+				{
+					marginBottom: ["0rem", "0.5rem"],
+				},
+			],
+			[
+				"#bottomBar",
+				{
+					marginTop: ["0rem", "0.5rem"],
+				},
+				{ at: "<" },
+			],
+		] as any;
+
+		let isOpen = false;
+
+		// functions
+		const openMenu = () => {
+			if (isOpen) return;
+			console.log("open menu");
+			document.body.style.overflow = "hidden";
+			menu.classList.remove("hidden");
+			menu.classList.add("flex");
+			timeline(openMenuSequence);
+			timeline(openMenuButton);
+		};
+
+		const closeMenu = () => {
+			if (!isOpen) return;
+			document.body.style.overflow = "auto";
+			timeline(closeMenuSequence).finished.then(() => {
+				menu.classList.add("hidden");
+				menu.classList.remove("flex");
+			});
+			timeline(closeMenuButton);
+		};
+
+		const toggleMenu = () => {
+			if (!isOpen) {
+				openMenu();
+			}
+			{
+				closeMenu();
+			}
+			isOpen = !isOpen;
+		};
+
+		// event listeners
+		if (menuButton) {
+			menuButton.addEventListener("click", toggleMenu);
+		}
+	};
+
+	menu();
+	document.addEventListener("astro:after-swap", menu);
+</script>

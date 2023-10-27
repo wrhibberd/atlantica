@@ -1,0 +1,94 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import { Image } from "astro:assets";
+import logo2 from "../assets/logos/Atlantica_Logo_White_2.png";
+
+const title = "About Atlantica";
+const description =
+	"- towards a pan-Atlantic festival of contemporary art and cultural enquiry";
+---
+
+<Layout {title} {description}>
+	<header class="p-4 md:p-8 flex justify-center">
+		<a href="/" class="transition-opacity hover:opacity-50 inline-block">
+			<Image
+				id="logo"
+				src={logo2}
+				alt="Atlantica Logo"
+				widths={[300, 600, 900]}
+				class="h-32 w-[512px] object-contain"
+			/>
+		</a>
+	</header>
+	<main
+		class="h-full grow relative selection:text-black selection:bg-white p-4 md:p-8"
+	>
+		<article class="prose prose-invert mx-auto">
+			<blockquote>
+				<p class="before:content-none after:content-none">
+					"Le monde entier se créolise"<br />
+					 [The world is in the process of creolization]
+				</p>
+				<cite>Édouard Glissant (1990)</cite>
+			</blockquote>
+			<p>
+				There are many different versions of the Atlantic. Our personal
+				relationship to the ocean; the felt experience of standing at
+				the edge of a seemingly limitless body of water; is a world
+				apart from the geopolitical understanding of the Atlantic that
+				has come to define the contemporary global order. Until
+				recently, the North Atlantic matrix of power, generally referred
+				to as the West, has held dominion over this version of reality;
+				ever since Europeans first landed in what they described as the
+				New World, imposing their master narrative of modernity and
+				Enlightenment reason hand-in-hand with a colonial-settler logic
+				of enslavement, extraction and genocide. In the wake of the
+				ensuing transatlantic slave trade, a new transcontinental Black
+				Atlantic culture has emerged, described by Paul Gilroy as “not
+				specifically African, American, Caribbean or [European], but all
+				of these at once”, transcending ethnicity and nationality to
+				embody a hybrid counterculture of modernity. At the same time,
+				with the rise of decolonisation movements around the world, many
+				in the Global South have embarked upon a radical process of
+				de-linking their own narratives of modernity, dismantling the
+				Western apparatus of a supposedly ‘universal’ knowledge that
+				excluded any worldview other than a Eurocentric projection. The
+				former subalterns of colonialism refuse any longer to be defined
+				by the British Atlantic, the French Atlantic, the Spanish
+				Atlantic, the Portuguese Atlantic, the Dutch Atlantic. In
+				contesting the totalising claims and epistemic violence of North
+				Atlantic modernity, the pluriversalism of the South also puts
+				into question the temporalities and relationalities which have
+				defined Western culture. In their place, new forms of knowledge
+				are required, and with them new forms of subjectivity and new
+				ways of imagining the future.
+			</p>
+			<p>
+				<em>Atlantica</em> is envisaged as a recurring pan-Atlantic
+				festival of contemporary art and cultural enquiry, providing a
+				platform for emergent hybrid subjectivities of the Black
+				Atlantic. Working with artists, curators, musicians, writers and
+				communities, <em>Atlantica</em> aims to re-examine the multiple
+				histories and ‘historical presents’ of the Atlantic from diverse
+				contemporary perspectives, challenging Eurocentric hierarchies
+				of knowledge and engaging with different possible
+				worlds-in-making. Starting from local, place-based cultural
+				enquiry, each edition will co-create transnational dialogues
+				between communities of shared interest; place to place, and
+				people to people; generating distinctive new versions of the
+				Atlantic and, in the process, re-telling ‘stories of place’ so
+				as to overcome barriers to social justice, wellbeing and
+				sustainability.
+			</p>
+			<p>Tom Trevor, Artistic Director</p>
+		</article>
+	</main>
+	<a
+		href="/"
+		class="fixed top-4 md:top-8 left-4 md:left-8 flex items-center md:space-x-4 transition-opacity hover:opacity-50"
+	>
+		<span class="text-2xl">&larr;</span>
+		<span class="hidden md:flex">back</span></a
+	>
+</Layout>
