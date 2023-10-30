@@ -8,6 +8,8 @@ interface Props {
 import { ViewTransitions } from "astro:transitions";
 import "../styles/app.pcss";
 
+const siteName = "Atlantica";
+
 const {
 	title,
 	description,
@@ -28,7 +30,7 @@ const {
 		<meta name="description" content={description} />
 		<meta property="og:locale" content="en_GB" />
 		<meta property="og:title" content={title} />
-		<meta property="og:site_name" content="Elite Sport Private Office" />
+		<meta property="og:site_name" content={siteName} />
 		<meta property="og:url" content={Astro.url.href} />
 		<meta property="og:description" content={description} />
 		<!-- <meta property="og:image" content="/seo/twitter-ganni.jpg" /> -->
