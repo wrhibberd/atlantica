@@ -5,33 +5,68 @@ import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
 
 <nav
 	id="menu"
-	class="fixed flex-col items-center inset-0 p-4 md:p-9 bg-black text-white opacity-0 -translate-y-100 hidden"
+	class="fixed flex-col items-center justify-between inset-0 p-4 md:p-9 bg-black text-white opacity-0 -translate-y-100 hidden"
 >
-	<Image
-		id="logo"
-		src={logo1}
-		alt="Atlantica Logo"
-		widths={[300, 600, 900]}
-		class="h-8 object-contain opacity-0 -translate-y-100"
-	/>
-	<ul
-		class="flex flex-col grow items-center justify-center w-full h-full text-center space-y-8"
-	>
-		<li><a href="/about">About</a></li>
-		<li>
-			<a href="mailto:mail@atlantica.art">Contact</a>
-		</li>
-		<li>
-			<p>Related Projects</p>
-			<a href="https://theatlantic.org/" target="_blank"
-				>The Atlantic Project</a
+	{
+		Astro.url.pathname !== "/" ? (
+			<a
+				href="/"
+				class="transition-opacity hover:opacity-50 inline-block"
 			>
-		</li>
-	</ul>
+				<Image
+					src={logo1}
+					alt="Atlantica Logo"
+					widths={[300, 600, 900]}
+					class="menuItem h-8 w-32 md:h-16 md:w-64 object-contain opacity-0 -translate-y-100"
+				/>
+			</a>
+		) : (
+			<Image
+				src={logo1}
+				alt="Atlantica Logo"
+				widths={[300, 600, 900]}
+				class="menuItem h-8 w-32 md:h-16 md:w-64 object-contain opacity-0 -translate-y-100"
+			/>
+		)
+	}
+
+	<div
+		class="flex flex-col text-xl md:text-3xl w-full items-center text-center menuItem opacity-0 -translate-y-100 font-exp font-bold"
+	>
+		{
+			Astro.url.pathname === "/about" ? (
+				<button
+					data-menu-button
+					class="transition-opacity hover:opacity-50"
+				>
+					About
+				</button>
+			) : (
+				<a href="/about" class="transition-opacity hover:opacity-50">
+					About
+				</a>
+			)
+		}
+		<a
+			href="mailto:mail@atlantica.art"
+			class="transition-opacity hover:opacity-50 mt-2 md:mt-4">Contact</a
+		>
+	</div>
+	<div
+		class="flex flex-col w-full space-y-2 md:space-y-4 items-center text-center menuItem opacity-0 -translate-y-100 font-cond"
+	>
+		<p>Related Projects</p>
+		<a
+			href="https://theatlantic.org/"
+			target="_blank"
+			class="text-xl md:text-3xl transition-opacity hover:opacity-50 font-exp font-bold"
+			>The Atlantic Project</a
+		>
+	</div>
 </nav>
 <button
-	id="menuButton"
-	class="flex flex-col justify-center w-8 h-8 absolute top-4 md:top-8 right-4 md:right-8"
+	data-menu-button
+	class="flex flex-col justify-center w-8 h-8 fixed top-4 md:top-8 right-4 md:right-8 transition-opacity hover:opacity-50"
 	aria-label="toggle menu"
 >
 	<span id="topBar" class="w-full h-px bg-white mb-2"></span>
@@ -39,12 +74,11 @@ import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
 </button>
 
 <script>
-	import { manifest } from "astro:ssr-manifest";
 	import { animate, stagger, timeline } from "motion";
 
 	const menu = () => {
 		// variables
-		const menuButton = document.getElementById("menuButton") as any;
+		const buttons = document.querySelectorAll("[data-menu-button]");
 		const menu = document.getElementById("menu") as any;
 
 		// sequences
@@ -64,12 +98,13 @@ import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
 				{ at: "<" },
 			],
 			[
-				"#logo",
+				".menuItem",
 				{
 					opacity: [0, 1],
 					y: ["-100%", "0%"],
 				},
 				{
+					delay: stagger(0.075),
 					at: "+.300",
 				},
 			],
@@ -84,12 +119,13 @@ import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
 				},
 			],
 			[
-				"#menu",
+				".menuItem",
 				{
 					opacity: [1, 0],
 					y: ["0%", "-100%"],
 				},
 				{
+					delay: stagger(0.075, { from: "last" }),
 					at: "+.300",
 				},
 			],
@@ -194,9 +230,16 @@ import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
 		};
 
 		// event listeners
-		if (menuButton) {
-			menuButton.addEventListener("click", toggleMenu);
-		}
+		buttons.forEach((button) => {
+			button.addEventListener("click", toggleMenu);
+		});
+
+		// add event lister to close menu when user types escape
+		document.addEventListener("keydown", (e) => {
+			if (e.key === "Escape" && isOpen) {
+				toggleMenu();
+			}
+		});
 	};
 
 	menu();

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import Menu from "../components/Menu.astro";
 
 import { Image } from "astro:assets";
 import logo2 from "../assets/logos/Atlantica_Logo_White_2.png";
@@ -10,29 +11,31 @@ const description =
 ---
 
 <Layout {title} {description}>
-	<header class="p-4 md:p-8 flex justify-center">
-		<a href="/" class="transition-opacity hover:opacity-50 inline-block">
-			<Image
-				id="logo"
-				src={logo2}
-				alt="Atlantica Logo"
-				widths={[300, 600, 900]}
-				class="h-32 w-[512px] object-contain"
-			/>
-		</a>
-	</header>
 	<main
 		class="h-full grow relative selection:text-black selection:bg-white p-4 md:p-8"
 	>
-		<article class="prose prose-invert mx-auto">
-			<blockquote>
-				<p class="before:content-none after:content-none">
+		<header class="p-4 md:p-8 flex justify-center">
+			<a
+				href="/"
+				class="transition-opacity hover:opacity-50 inline-block"
+			>
+				<Image
+					src={logo2}
+					alt="Atlantica Logo"
+					widths={[300, 600, 900]}
+					class="h-32 w-[512px] object-contain"
+				/>
+			</a>
+		</header>
+		<article class="prose prose-zinc prose-invert mx-auto">
+			<blockquote class="not-italic text-xl font-exp">
+				<p class="before:content-none after:content-none font-bold">
 					"Le monde entier se créolise"<br />
 					 [The world is in the process of creolization]
 				</p>
-				<cite>Édouard Glissant (1990)</cite>
+				<cite class="not-italic">Édouard Glissant (1990)</cite>
 			</blockquote>
-			<p>
+			<p class="pt-[1em]">
 				There are many different versions of the Atlantic. Our personal
 				relationship to the ocean; the felt experience of standing at
 				the edge of a seemingly limitless body of water; is a world
@@ -81,14 +84,11 @@ const description =
 				as to overcome barriers to social justice, wellbeing and
 				sustainability.
 			</p>
-			<p>Tom Trevor, Artistic Director</p>
+			<p class="text-xl font-exp pt-[1em]">
+				<span class="font-bold">Tom Trevor</span><br />
+				 co-convenor
+			</p>
 		</article>
 	</main>
-	<a
-		href="/"
-		class="fixed top-4 md:top-8 left-4 md:left-8 flex items-center md:space-x-4 transition-opacity hover:opacity-50"
-	>
-		<span class="text-2xl">&larr;</span>
-		<span class="hidden md:flex">back</span></a
-	>
+	<Menu />
 </Layout>

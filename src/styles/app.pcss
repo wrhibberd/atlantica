@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	* {
+		@apply focus:ring-0 focus-visible:outline-2 focus-visible:outline-offset-8 focus-visible:outline-white focus-visible:rounded-sm;
+	}
+
+	/* standard */
+	@font-face {
+		font-family: "america";
+		font-style: normal;
+		font-weight: normal;
+		font-display: swap;
+		src: url("../assets/fonts/GT-America-Standard-Light.woff2")
+			format("woff2");
+	}
+
+	/* expanded */
+	@font-face {
+		font-family: "america-exp";
+		font-style: normal;
+		font-weight: normal;
+		font-display: swap;
+		src: url("../assets/fonts/GT-America-Expanded-Light.woff2")
+			format("woff2");
+	}
+	@font-face {
+		font-family: "america-exp";
+		font-style: normal;
+		font-weight: bold;
+		font-display: swap;
+		src: url("../assets/fonts/GT-America-Expanded-Bold.woff2")
+			format("woff2");
+	}
+
+	/* condensed */
+	@font-face {
+		font-family: "america-cond";
+		font-style: normal;
+		font-weight: normal;
+		font-display: swap;
+		src: url("../assets/fonts/GT-America-Condensed-Light.woff2")
+			format("woff2");
+	}
+}
