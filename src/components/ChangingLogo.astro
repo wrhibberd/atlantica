@@ -93,7 +93,6 @@ const { imageClass } = Astro.props as Props;
 		if (images.length === 0) return; // if no images, stop
 
 		let currentIndex = 0; // set initial index to 0
-
 		function cycleImages() {
 			images[currentIndex].classList.remove("opacity-100"); // hide current image
 			images[currentIndex].classList.add("opacity-0"); // hide current image
@@ -101,19 +100,20 @@ const { imageClass } = Astro.props as Props;
 			images[currentIndex].classList.remove("opacity-0"); // show next image
 			images[currentIndex].classList.add("opacity-100"); // show next image
 		}
-		Promise.all(
-			Array.from(document.images)
-				.filter((img) => !img.complete)
-				.map(
-					(img) =>
-						new Promise((resolve) => {
-							img.onload = img.onerror = resolve;
-						})
-				)
-		).then(() => {
-			console.log("All images loaded!");
-			setInterval(cycleImages, 275);
-		});
+		console.log(images);
+		// Promise.all(
+		// 	Array.from(document.images)
+		// 		.filter((img) => !img.complete)
+		// 		.map(
+		// 			(img) =>
+		// 				new Promise((resolve) => {
+		// 					img.onload = img.onerror = resolve;
+		// 				})
+		// 		)
+		// ).then(() => {
+		// 	console.log("All images loaded!");
+		// });
+		setInterval(cycleImages, 275);
 	};
 	changingLogo();
 	document.addEventListener("astro:after-swap", changingLogo);
