@@ -111,6 +111,7 @@ const { imageClass } = Astro.props as Props;
 						})
 				)
 		).then(() => {
+			console.log("All images loaded!");
 			setInterval(cycleImages, 275);
 		});
 	};
