@@ -8,7 +8,11 @@ export default {
 			cond: ['"america-cond"', ...defaultTheme.fontFamily.serif],
 			exp: ['"america-exp"', ...defaultTheme.fontFamily.serif],
 		},
-		extend: {},
+		extend: {
+			transitionDuration: {
+				DEFAULT: "600ms",
+			},
+		},
 	},
 	plugins: [require("@tailwindcss/typography")],
 };

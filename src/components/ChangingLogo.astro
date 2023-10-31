@@ -3,14 +3,13 @@ interface Props {
 	imageClass?: string;
 }
 
+import { Image } from "astro:assets";
 import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
 import logo2 from "../assets/logos/Atlantica_Logo_White_2.png";
 import logo3 from "../assets/logos/Atlantica_Logo_White_3.png";
 import logo4 from "../assets/logos/Atlantica_Logo_White_4.png";
 import logo5 from "../assets/logos/Atlantica_Logo_White_5.png";
 import logo6 from "../assets/logos/Atlantica_Logo_White_6.png";
-
-import { Image } from "astro:assets";
 
 const { imageClass } = Astro.props as Props;
 ---
@@ -96,7 +95,6 @@ const { imageClass } = Astro.props as Props;
 		let currentIndex = 0; // set initial index to 0
 
 		function cycleImages() {
-			// console.log("cycleImages");
 			images[currentIndex].classList.remove("opacity-100"); // hide current image
 			images[currentIndex].classList.add("opacity-0"); // hide current image
 			currentIndex = (currentIndex + 1) % images.length; // increment index and wrap around
@@ -113,7 +111,6 @@ const { imageClass } = Astro.props as Props;
 						})
 				)
 		).then(() => {
-			// console.log("images finished loading");
 			setInterval(cycleImages, 275);
 		});
 	};

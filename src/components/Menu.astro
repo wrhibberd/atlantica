@@ -5,7 +5,7 @@ import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
 
 <nav
 	id="menu"
-	class="fixed flex-col items-center justify-between inset-0 p-4 md:p-9 bg-black text-white opacity-0 -translate-y-100 hidden"
+	class="fixed flex-col items-center justify-between inset-0 p-4 md:p-9 bg-black opacity-0 -translate-y-100 hidden"
 >
 	{
 		Astro.url.pathname !== "/" ? (
@@ -69,8 +69,8 @@ import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
 	class="flex flex-col justify-center w-8 h-8 fixed top-4 md:top-8 right-4 md:right-8 transition-opacity hover:opacity-50"
 	aria-label="toggle menu"
 >
-	<span id="topBar" class="w-full h-px bg-white mb-2"></span>
-	<span id="bottomBar" class="w-full h-px bg-white mt-2"></span>
+	<span id="topBar" class="w-full h-px bg-current mb-2"></span>
+	<span id="bottomBar" class="w-full h-px bg-current mt-2"></span>
 </button>
 
 <script>
