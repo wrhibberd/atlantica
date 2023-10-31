@@ -4,6 +4,6 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://venerable-licorice-d7b001.netlify.app/",
+	site: "https://atlantica.art/",
 	integrations: [tailwind({ applyBaseStyles: false }), sitemap()],
 });
