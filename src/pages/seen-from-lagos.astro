@@ -1,0 +1,237 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Menu from "../components/Menu.astro";
+
+import { Image } from "astro:assets";
+import logo2 from "../assets/logos/Atlantica_Logo_White_2.png";
+import bgImage from "../assets/images/seen-from-lagos/adire.jpg";
+
+const title = "Seen from Lagos";
+const description = "There are many different versions of the Atlantic.";
+---
+
+<Layout {title} {description}>
+	<main
+		class="h-full grow relative selection:text-black selection:bg-zinc-100 pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16"
+	>
+		<div class="fixed inset-0">
+			<Image
+				src={bgImage}
+				alt="Adire fabric pattern"
+				widths={[300, 600, 900]}
+				class="h-full w-full object-cover"
+			/>
+			<div
+				class="inset-0 bg-gradient-to-t from-black to-sky-900 mix-blend-multiply fixed"
+			>
+			</div>
+		</div>
+		<article class="prose prose-zinc prose-invert mx-auto relative">
+			<table>
+				<tbody>
+					<tr>
+						<td>Platform 1: Lagos</td>
+						<td style="text-align: right;"
+							>UNILAG / University of Exeter</td
+						>
+					</tr>
+				</tbody>
+			</table>
+			<div class="py-20">
+				<div class="flex justify-center">
+					<a href="/" class="transition-opacity hover:opacity-50">
+						<Image
+							src={logo2}
+							alt="Atlantica Logo"
+							widths={[300, 600, 900]}
+							class="h-16 w-[256px] object-contain my-4"
+						/>
+					</a>
+				</div>
+				<h1 class="text-center font-exp uppercase mb-0">{title}</h1>
+				<p class="lead text-center mb-0 font-cond uppercase mt-6">
+					African Regroundings
+				</p>
+			</div>
+			<p class="lead">
+				This workshop is oriented towards the future in its exploration
+				of solutions and routes through barriers which we find in the
+				contemporary academy.
+			</p>
+			<p>
+				It begins with the fear identified by Muyiwa Falaiye in his 2017
+				essay “Is African Studies Afraid of African Philosophy?” If even
+				specialised branches of Area Studies devoted to the study of
+				Africa are either ignorant of, or uneasy in dealing with,
+				theories, concepts and methods drawn from African knowledge
+				systems, what hope is there for the broader fields of the
+				Humanities and the Social Sciences?
+			</p>
+			<p>
+				While the subsequent years since the publication of Falaiye’s
+				article have vibrantly trailed the rise of a “decolonial turn,”
+				particularly in institutions in the Global North, there is scant
+				evidence that academic disciplines have shown any appetite to
+				find new ways to think from or with modes of thought from the
+				Global South. Equally noteworthy is the inadequacy of mutually
+				conceived intentional conversations bridging knowledge spaces of
+				the Global South. Though unacknowledged, this is partly a
+				function of the difficulties entailed in both unlearning
+				existing modes of perceiving the world, and navigating through
+				various entanglements of subjectivities, alongside the hard
+				graft needed in opening one’s mind to understanding through
+				other languages, concepts and modes of being.
+			</p>
+			<p>
+				This workshop directly addresses such deficits through the
+				provision of case studies which it hopes will inspire others to
+				see the expected awakening which can arrive through approaches
+				to knowledge creation which find inspiration in specific schools
+				of thinking or praxis from the African continent. As such, it
+				encourages the submission of philosophical studies which are
+				able to engage prevalent pedagogies, explore and situate the
+				value of indigenous epistemologies; not necessarily divorcing
+				them from broader currents within their academic fields, though
+				naming and enumerating their specific utility.
+			</p>
+			<p>
+				A second originating position lies in the study of art, both
+				through forms of cultural practice and in the discipline of the
+				history of art as it has been reconstrued by African – and
+				especially Nigerian – writers such as Chika Okeke-Agulu and
+				Rowland Ọlá Abíọ́dún. Beginning with this latter thinker, we take
+				seriously his admonition that we are faced with the “urgent
+				task” not simply of documenting global differences but ensuring
+				“the survival and essential role of African artistic and
+				aesthetic concepts in the study of art in Africa.” For this to
+				happen, Abíọ́dún proposes a progressive abandonment of the
+				conventional methods of the Western humanities, for their
+				tendency is one of “concealing and even eliminating the social
+				and religio-aesthetic foundation of the visual arts.”
+			</p>
+			<p>
+				Looking beyond Africa towards other exemplars, we are able to
+				see the manner in which fundamental notions of time, history and
+				aesthetics have been upended in quite general, as well as
+				scholarly, fashions in locales such as Australia, where
+				indigenous modes of artistic production have induced
+				paradigmatic changes in thought. Similar tendencies can also be
+				seen in specialised fields of study in Islamic art, in which the
+				specificity of forms of Muslim spiritual enlightenment are
+				prized above the emplacement of works of art within western
+				frames of knowledge.
+			</p>
+			<p>
+				Returning to Nigeria, it is arguable that one of the greatest
+				conceptual gains which has emerged through the creation of
+				indigenous forms of modernism by groups such as the Nsukka
+				School has been their imagination of cultural production as a
+				marriage of forms. Far from precluding deeper understandings of
+				indigenous knowledge, fine art presents opportunities to
+				disseminate such understandings in new fashions, to both local
+				and international audiences. Relatedly, the degree to which an
+				easy interchange across the study and making of art – evinced at
+				UNILAG in the work of Peju Layiwola and others – reflects a
+				positive belief in the ideal of conceptual and embodied forms of
+				knowledge-making working in tandem.
+			</p>
+			<p>
+				We therefore invite contributions to this event which may take
+				the form of academic papers or artistic, curatorial or other
+				forms of intervention. Our overarching goal is to move our
+				fields forward so that no one should be afraid of African
+				thought today, while some of its manifold facets might begin to
+				be better understood at and through this symposium.
+			</p>
+			<hr />
+			<p>
+				The symposium, <em>Seen from Lagos: African Regroundings</em>,
+				is the first in a new series of <em>Atlantica</em> platforms and
+				events, working towards a pan-Atlantic biennial of contemporary art
+				and cultural enquiry. Working with artists, writers and communities,
+				<em>Atlantica</em> aims to re-examine the multiple histories and
+				‘historical presents’ of the Atlantic from diverse contemporary perspectives.
+				In contesting the totalising claims and epistemic violence of North
+				Atlantic modernity, the ‘pluriversalism’ of the South also puts into
+				question the temporalities and relationalities which have defined
+				Western culture. In their place, new forms of knowledge are required,
+				and with them new forms of subjectivity and new ways of imagining
+				the future.
+			</p>
+			<hr />
+			<h2>Symposium Planning Timetable</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td>13 November 2023</td>
+						<td
+							>First draft of concept note sent from Exeter to
+							UNILAG
+						</td>
+					</tr>
+					<tr>
+						<td>24 November 2023</td>
+						<td> Second draft returned to Exeter from UNILAG</td>
+					</tr>
+					<tr>
+						<td>4 December 2023 @ 1400</td>
+						<td
+							>Teams meeting to finalise concept note, potential
+							CFP and next steps</td
+						>
+					</tr>
+					<tr>
+						<td>Ca. January 2024</td>
+						<td
+							>Announcement of symposium and call for
+							participation / Invitations proffered</td
+						>
+					</tr>
+					<tr>
+						<td>June 2024</td>
+						<td>Symposium in Lagos</td>
+					</tr>
+					<tr>
+						<td>Summer 2024</td>
+						<td
+							>Discussion of next steps, potential publication,
+							hopes & dreams
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr />
+			<h2>Organisational notes</h2>
+			<ol>
+				<li>
+					Are there ways in which this event can connect to Tom
+					Trevor’s proposed Atlantica pan-Atlantic festival of
+					contemporary art and cultural enquiry?
+				</li>
+				<li>
+					Might a few emerging dialogues with figures such as Koyo
+					Kouoh (Zeitz MOCAA) or Oyindamola Fakeye (CCA Lagos) form
+					part of the event?
+				</li>
+				<li>
+					How can we ensure (pace Peju) that we locate the voices of
+					new, emerging or overlooked African thinkers?
+				</li>
+				<li>
+					What outcomes could we imagine from the event? Might a
+					publication with global reach which gives voice to
+					participants be one goal?
+				</li>
+				<li>
+					Who might UNILAG invite as a keynote speaker from outside
+					Nigeria?
+				</li>
+			</ol>
+			<p>
+				Social struggles are epistemic struggles, questioning our
+				worldviews and challenging our forms of understanding.
+			</p>
+		</article>
+	</main>
+	<Menu />
+</Layout>
