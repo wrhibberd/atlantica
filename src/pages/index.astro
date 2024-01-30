@@ -2,6 +2,10 @@
 import Layout from "../layouts/Layout.astro";
 import Menu from "../components/Menu.astro";
 import ChangingLogo from "../components/ChangingLogo.astro";
+import UNILAG from "../components/UNILAG.astro";
+
+import { Image } from "astro:assets";
+import bgImage from "../assets/images/seen-from-lagos/peju.jpg";
 
 const title = "Atlantica";
 const description =
@@ -12,34 +16,92 @@ const description =
 	<main
 		class="h-full grow relative selection:text-black selection:bg-text-zinc-100"
 	>
-		<h1 class="sr-only">Atlantica</h1>
-		<video
-			class="w-full h-full object-cover absolute saturate-0 pointer-events-none"
-			autoplay
-			muted
-			loop
-			playsinline
-			preload="metadata"
-			src="/atl_hex.mp4#t=0.1"
-		>
-			<source type="video/mp4" src="/atl_hex.mp4#t=0.1" />
-		</video>
-		<div
-			class="relative w-full h-screen flex flex-col justify-center items-center px-4 md:px-8 text-center"
-		>
-			<div class="relative w-full h-32 md:h-64">
-				<ChangingLogo imageClass="h-32 md:h-64" />
+		<header id="top" class="fixed inset-0">
+			<h1 class="sr-only">Atlantica</h1>
+			<video
+				class="w-full h-full object-cover absolute saturate-0 pointer-events-none"
+				autoplay
+				muted
+				loop
+				playsinline
+				preload="metadata"
+				src="/atl_hex.mp4#t=0.1"
+			>
+				<source type="video/mp4" src="/atl_hex.mp4#t=0.1" />
+			</video>
+			<div
+				class="relative w-full h-screen flex flex-col justify-center items-center px-4 md:px-8 text-center"
+			>
+				<div class="relative w-full h-32 md:h-64">
+					<ChangingLogo imageClass="h-32 md:h-64" />
+				</div>
+				<p class="font-cond text-lg md:text-xl">
+					- towards a pan-Atlantic biennial of contemporary art and
+					critical enquiry
+				</p>
 			</div>
-			<p class="font-cond text-lg md:text-xl">
-				- towards a pan-Atlantic biennial of contemporary art and
-				critical enquiry
-			</p>
+
+			<div
+				class="absolute inset-0 bg-[red] mix-blend-overlay pointer-events-none"
+			>
+			</div>
+		</header>
+
+		<div id="bottom-image" class="fixed inset-0 translate-y-full opacity-0">
+			<Image
+				src={bgImage}
+				alt="Adire fabric pattern"
+				widths={[300, 600, 900]}
+				class="h-full w-full object-cover"
+			/>
+			<div
+				class="inset-0 bg-gradient-to-t from-black to-sky-900 mix-blend-multiply absolute"
+			>
+			</div>
 		</div>
 
-		<div
-			class="absolute inset-0 bg-[red] mix-blend-overlay pointer-events-none"
-		>
+		<div id="bottom" class="mt-[100vh] relative w-full h-screen">
+			<UNILAG tag="h2" />
 		</div>
 	</main>
 	<Menu />
 </Layout>
+
+<script>
+	import { scroll, timeline } from "motion";
+
+	const animatOnScroll = () => {
+		const animation = [
+			[
+				"#top",
+				{
+					opacity: 0,
+					y: "-50vh",
+				},
+			],
+			[
+				"#bottom",
+				{
+					opacity: [0, 1],
+				},
+				{ at: "<" },
+			],
+			[
+				"#bottom-image",
+				{
+					opacity: [1, 1],
+					y: ["100vh", "0"],
+				},
+				{ at: "<" },
+			],
+		];
+
+		//@ts-ignore
+		scroll(timeline(animation), {
+			target: document.querySelector("#bottom"),
+			offset: ["start end", "start start"],
+		});
+	};
+	animatOnScroll();
+	document.addEventListener("astro:after-swap", animatOnScroll);
+</script>
