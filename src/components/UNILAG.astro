@@ -1,12 +1,12 @@
 ---
 import { Image } from "astro:assets";
-import logo2 from "../assets/logos/Atlantica_Logo_White_2.png";
+import logo2 from "../assets/logos/Atlantica_Logo_White_1.png";
 
 const { tag: Element = "h1" } = Astro.props;
 ---
 
 <article
-	class="prose prose-zinc prose-invert mx-auto relative [text-wrap:pretty] pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16"
+	class="prose prose-zinc prose-invert mx-auto relative [text-wrap:pretty] pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16 selection:text-black selection:bg-zinc-100"
 >
 	<table class="text-lg font-cond text-zinc-100">
 		<tbody>
@@ -32,18 +32,19 @@ const { tag: Element = "h1" } = Astro.props;
 		<Element class="text-center font-exp uppercase my-0 text-4xl">
 			Seen from Lagos
 		</Element>
-		<p
-			class="lead text-center text-zinc-100 italic font-bold mb-0 font-cond mt-6"
-		>
+		<p class="lead text-center text-zinc-100 font-bold mb-0 font-cond mt-6">
 			African Re-groundings
 		</p>
 	</div>
-	<p>
-		Call for Participation in the inaugural platform of the
-		<em>Atlantica</em> series<br />
+	<p class="lead text-zinc-300 font-exp">
+		<strong>Call for Participation</strong> in the inaugural platform of the
+		<strong><em>Atlantica</em></strong> series<br />
 		25-26 June 2024 at University of Lagos (UNILAG), Nigeria
 	</p>
-	<p>Submission deadline: 18 March 2024</p>
+	<p class="lead text-zinc-300 font-exp">
+		Submission deadline: <strong>18 March 202</strong><br />
+		Keynote speaker: <strong>Ruth Simbao</strong>
+	</p>
 	<p class="lead text-zinc-300">
 		The first <em>Atlantica</em> platform, <em>Seen from Lagos</em> is oriented
 		towards the future in its exploration of solutions and routes through barriers
@@ -175,6 +176,6 @@ const { tag: Element = "h1" } = Astro.props;
 	<p>
 		<a href="mailto:iads@unilag.edu.ng">iads@unilag.edu.ng</a> + <a
 			href="mailto:atlantica@exeter.ac.uk">atlantica@exeter.ac.uk</a
-		> (tbc)
+		>
 	</p>
 </article>

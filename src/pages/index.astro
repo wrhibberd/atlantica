@@ -12,11 +12,16 @@ const description =
 	"- towards a pan-Atlantic biennial of contemporary art and critical enquiry";
 ---
 
+<style>
+	.ss03 {
+		font-feature-settings: "ss03";
+	}
+</style>
 <Layout {title} {description}>
 	<main
 		class="h-full grow relative selection:text-black selection:bg-text-zinc-100"
 	>
-		<header id="top" class="fixed inset-0">
+		<header id="masthead" class="fixed inset-0">
 			<h1 class="sr-only">Atlantica</h1>
 			<video
 				class="w-full h-full object-cover absolute saturate-0 pointer-events-none"
@@ -40,14 +45,22 @@ const description =
 					critical enquiry
 				</p>
 			</div>
-
+			<div
+				class="absolute bottom-4 md:bottom-9 inset-x-0 text-center text-2xl ss03"
+			>
+				<button
+					id="to-UNILAG"
+					aria-label="Scroll down to UNILAG call for participation"
+					class="hover:opacity-50 transition-opacity">↓</button
+				>
+			</div>
 			<div
 				class="absolute inset-0 bg-[red] mix-blend-overlay pointer-events-none"
 			>
 			</div>
 		</header>
 
-		<div id="bottom-image" class="fixed inset-0 translate-y-full opacity-0">
+		<div id="UNILAG-bg" class="fixed inset-0 translate-y-full opacity-0">
 			<Image
 				src={bgImage}
 				alt="Adire fabric pattern"
@@ -60,7 +73,7 @@ const description =
 			</div>
 		</div>
 
-		<div id="bottom" class="mt-[100vh] relative w-full h-screen">
+		<div id="UNILAG" class="mt-[100vh] relative w-full h-screen">
 			<UNILAG tag="h2" />
 		</div>
 	</main>
@@ -71,23 +84,25 @@ const description =
 	import { scroll, timeline } from "motion";
 
 	const animatOnScroll = () => {
+		const masthead = document.querySelector("#masthead") as HTMLElement;
+		if (!masthead) return;
 		const animation = [
 			[
-				"#top",
+				"#masthead",
 				{
 					opacity: 0,
 					y: "-50vh",
 				},
 			],
 			[
-				"#bottom",
+				"#UNILAG",
 				{
 					opacity: [0, 1],
 				},
 				{ at: "<" },
 			],
 			[
-				"#bottom-image",
+				"#UNILAG-bg",
 				{
 					opacity: [1, 1],
 					y: ["100vh", "0"],
@@ -98,10 +113,29 @@ const description =
 
 		//@ts-ignore
 		scroll(timeline(animation), {
-			target: document.querySelector("#bottom"),
+			target: document.querySelector("#UNILAG"),
 			offset: ["start end", "start start"],
 		});
 	};
+
+	// get the button
+	const scrollToUNILAG = () => {
+		const toUNILAG = document.querySelector(
+			"#to-UNILAG"
+		) as HTMLButtonElement;
+		const UNILAG = document.querySelector("#UNILAG") as HTMLElement;
+
+		if (!toUNILAG || !UNILAG) return;
+
+		toUNILAG.addEventListener("click", () => {
+			UNILAG.scrollIntoView({
+				behavior: "smooth",
+			});
+		});
+	};
+
 	animatOnScroll();
+	scrollToUNILAG();
 	document.addEventListener("astro:after-swap", animatOnScroll);
+	document.addEventListener("astro:after-swap", scrollToUNILAG);
 </script>
