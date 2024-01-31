@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Menu from "../components/Menu.astro";
+import UNILAG from "../components/UNILAG.astro";
+
+import { Image } from "astro:assets";
+import bgImage from "../assets/images/seen-from-lagos/peju.jpg";
+
+const title = "Seen from Lagos";
+const description = "There are many different versions of the Atlantic.";
+---
+
+<Layout {title} {description}>
+	<main class="h-full grow relative">
+		<div class="fixed inset-0">
+			<Image
+				src={bgImage}
+				alt="Adire fabric pattern"
+				widths={[300, 600, 900]}
+				class="h-full w-full object-cover"
+			/>
+			<div
+				class="inset-0 bg-gradient-to-t from-black to-sky-900 mix-blend-multiply fixed"
+			>
+			</div>
+		</div>
+		<UNILAG />
+	</main>
+	<Menu />
+</Layout>

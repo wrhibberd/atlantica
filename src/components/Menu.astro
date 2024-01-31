@@ -47,6 +47,23 @@ import logo1 from "../assets/logos/Atlantica_Logo_White_1.png";
 				</a>
 			)
 		}
+		{
+			Astro.url.pathname === "/seen-from-lagos" ? (
+				<button
+					data-menu-button
+					class="transition-opacity hover:opacity-50 mt-2 md:mt-4"
+				>
+					Seen From Lagos
+				</button>
+			) : (
+				<a
+					href="/seen-from-lagos"
+					class="transition-opacity hover:opacity-50 mt-2 md:mt-4"
+				>
+					Seen From Lagos
+				</a>
+			)
+		}
 		<a
 			href="mailto:mail@atlantica.art"
 			class="transition-opacity hover:opacity-50 mt-2 md:mt-4">Contact</a
