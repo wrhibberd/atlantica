@@ -1,14 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Menu from "../components/Menu.astro";
-import UNILAG from "../components/UNILAG.astro";
+import SymposiumInformation from "../components/SymposiumInformation.astro";
 
 import { Image } from "astro:assets";
 import bgImage from "../assets/images/seen-from-lagos/peju.jpg";
 
 const title = "Atlantica – Seen from Lagos";
 const description =
-	"Call for Participation in the inaugural platform of the Atlantica series 25-26 June 2024 at University of Lagos (UNILAG), Nigeria";
+	"UNILAG-Exeter Atlantica Symposium – Institute of African and Diaspora Studies";
+// "Call for Participation in the inaugural platform of the Atlantica series 25-26 June 2024 at University of Lagos (UNILAG), Nigeria";
 ---
 
 <Layout {title} {description}>
@@ -25,7 +26,7 @@ const description =
 			>
 			</div>
 		</div>
-		<UNILAG />
+		<SymposiumInformation />
 	</main>
 	<Menu />
 </Layout>

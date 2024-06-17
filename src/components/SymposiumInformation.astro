@@ -1,0 +1,499 @@
+---
+import { Image } from "astro:assets";
+import logo2 from "../assets/logos/Atlantica_Logo_White_1.png";
+
+const day1 = [
+	{
+		start: "8.30am",
+		finish: "9.00am",
+		event: "*Arrival and Registration<br />*Housekeeping rules and remarks",
+		presenter: "<strong>Dr Abisoye Eleshin</strong><br />(IADS, UNILAG)",
+	},
+	{
+		start: "9.05am",
+		finish: "9.15am",
+		event: "*Welcome address",
+		presenter:
+			"<p><strong>Prof Muyiwa Falaiye</strong><br />(Director, IADS, UNILAG)</p><p><strong>Prof William Gallois</strong><br />(Asst. Director, Institute of Arabic & Islamic Studies, University of Exeter)</p>",
+	},
+	{
+		start: "9.15am",
+		finish: "9.25am",
+		event: "Opening remarks",
+		presenter:
+			"<strong>Prof Folasade Ogunsola</strong><br />, Vice Chancellor, UNILAG",
+	},
+	{
+		start: "9.25am",
+		finish: "9.30am",
+		event: "Keynote Speaker Citation",
+		presenter: "<strong>Dr Abisoye Eleshin</strong><br />(IADS, UNILAG)",
+	},
+	{
+		start: "9.30am",
+		finish: "10.30am",
+		event: "Keynote Address",
+		presenter:
+			"<strong>Prof Ruth Simbao</strong><br />(National Research Foundation SARChI Chair in Geopolitics and the Arts of Africa, Rhodes University, RSA)",
+	},
+	{
+		start: "10.30am",
+		finish: "10.45am",
+		event: "Have you ever seen the Sunrise on Brackish Waters? (Eko Ile)",
+		presenter: "<strong>Lara Oshinowo</strong>",
+	},
+	{
+		start: "10.45am",
+		finish: "11.10am",
+		event: "<strong>Tea Break</strong>",
+		presenter: "",
+	},
+	{
+		start: "11.10am",
+		finish: "12.40pm",
+		event: "<p><strong>Session 1: African Re-groundings</strong></p><p><strong>Bizuum Yadok</strong> – In Defense of Leoparditude: A Case to Update an Indigenous African Literary Theory (VIRTUAL)</p><p><strong>Gbenga Fasiku</strong> - Embodied Philosophy: Foundation for Unbundling African Knowledge System</p><p><strong>Bolanle Adetula</strong> – Subconscious trails of African Study: Re-imaging Contemporary African Studies.</p><p><strong>Muhammad Finch</strong> - Unveiling an Ante-Onto-Epistemology: Shaikh Ibrāhīm Niasse and the Paradigmatic Shift in Afro-Islamic Thought (VIRTUAL)</p><p><strong>Bolatito Kolawole</strong> – Indigenous Language Re-learning and the Question of Return</p>",
+		presenter:
+			"Chair: <strong>Prof Muyiwa Falaiye</strong><br />(Director, IADS, UNILAG)",
+	},
+	{
+		start: "12.40pm",
+		finish: "1.00pm",
+		event: "<i>The Egba Revolt : Recovering the Egba Women’s strategies, Stories and Songs</i>",
+		presenter: "<strong>Lanaire Aderemi</strong>",
+	},
+	{
+		start: "1.00pm",
+		finish: "1.55pm",
+		event: "<strong>Lunch</strong>",
+		presenter: "",
+	},
+	{
+		start: "2.00pm",
+		finish: "2.10pm",
+		event: "<strong>Estefi Bournot</strong> - Specular Shores: Afro-Brazilian Entanglements from Abolition to the Present (VIRTUAL)",
+		presenter: "",
+	},
+	{
+		start: "2.10pm",
+		finish: "2.25pm",
+		event: "<i>Screening of “(Other)” Foundations</i>",
+		presenter: "",
+	},
+	{
+		start: "2.25pm",
+		finish: "2.45pm",
+		event: "Conversation with <strong>Aline Motta</strong>",
+		presenter: "",
+	},
+	{
+		start: "2.45pm",
+		finish: "3.00pm",
+		event: "Short break",
+		presenter: "",
+	},
+	{
+		start: "3.00pm",
+		finish: "4.30pm",
+		event: "<p><strong>Session 2: African Aesthetics and Material Cultures</strong></p><p><strong>Zainab Bello</strong> – Decolonization of Textile Narratives: A Visual Exploration of Hausa Folktales As Inspiration in Wax Print Designs</p><p><strong>Umana Nnochiri</strong> - Alaptal Cloth: Visual metaphors on textiles (VIRTUAL)</p><p><strong>Kehinde Adepegba</strong> – Interrogating Yoruba Art Through the Epistemology of Number in Yoruba Belief</p><p><strong>Abiodun Abdul</strong> - Past Speculation for Future Inspiration (VIRTUAL)</p><p><strong>Nathaniel Ogunyale</strong> – Beyond Utility: Understanding the Aesthetic and Cultural Dimensions of Yoruba Domestic Artifacts</p>",
+		presenter:
+			"Chair: <strong>Prof Peju Layiwola</strong><br />(Art History, UNILAG)",
+	},
+	{
+		start: "4.35pm",
+		finish: "4.50pm",
+		event: "<i>The Poverty of Revolutionary Leaders and the October 20, 2020 Experience</i>",
+		presenter: "<strong>Amenaghawon Idawu</strong>",
+	},
+	{
+		start: "4.50pm",
+		finish: "5.00pm",
+		event: "Housekeeping and Remarks",
+		presenter:
+			"<strong>Prof Ayo Yusuff</strong><br />(Head of Research, IADS, UNILAG)",
+	},
+	{
+		start: "5.15pm",
+		finish: "6.30pm",
+		event: "<strong>Drinks Reception:</strong> <i>Shine Your Eye Exhibition</i>",
+		presenter: "<strong>Deji Akinpelu</strong>",
+	},
+];
+
+const day2 = [
+	{
+		start: "9.00am",
+		finish: "9.05am",
+		event: "Housekeeping rules and remarks, Introduction of Lead Speaker",
+		presenter: "Dr Moses Yakubu (IADS, UNILAG)",
+	},
+	{
+		start: "9.10am",
+		finish: "10.00 am",
+		event: "In Conversation with Azu Nwagbogu (Director, African Artists Foundation/LagosPhoto)",
+		presenter:
+			"Prof Tom Trevor (Contemporary Art & Curation, University of Exeter)",
+	},
+	{
+		start: "10.05am",
+		finish: "10:20am",
+		event: "Nigeria’s Destiny - Poetry as Mirror of Our Cultural Values",
+		presenter: "Ayo Ayoola-Amale",
+	},
+	{
+		start: "10.20am",
+		finish: "10.40am",
+		event: "Tea break",
+		presenter: "",
+	},
+	{
+		start: "10.45am",
+		finish: "12.15pm",
+		event: "Session 3A: Uncolonialism",
+		presenter: "Multiple speakers",
+	},
+	{
+		start: "10.45am",
+		finish: "12.15pm",
+		event: "Session 3B: Ethnographies",
+		presenter: "Multiple speakers",
+	},
+	{
+		start: "12.15pm",
+		finish: "12.25pm",
+		event: "Short break",
+		presenter: "",
+	},
+	{
+		start: "12.25pm",
+		finish: "12.40pm",
+		event: "Reimagining Roots: A Multisensory Journey",
+		presenter: "Mykel Akomaye",
+	},
+	{
+		start: "12.45pm",
+		finish: "1.40pm",
+		event: "PANEL: Decolonizing Knowledge Production and Consumption in Post-Colonial Africa: Challenges and Pathways for a Global Decolonial Africanity",
+		presenter: "Fela Kuti Study Group",
+	},
+	{
+		start: "1.40pm",
+		finish: "2.35pm",
+		event: "Lunch",
+		presenter: "",
+	},
+	{
+		start: "2.40pm",
+		finish: "3.00pm",
+		event: "Echoes of Resistance: Unveiling Anticolonial Soundscapes through Listening Sessions",
+		presenter: "Rui Vilela",
+	},
+	{
+		start: "3.00pm",
+		finish: "4.15pm",
+		event: "Session 4: Atlantica",
+		presenter: "Multiple speakers",
+	},
+	{
+		start: "4.15pm",
+		finish: "4.40pm",
+		event: "African Indigenous Knowledge Production and the Arts: Reading from Wishes - A Play",
+		presenter: "Dr Abisoye Eleshin",
+	},
+	{
+		start: "4.40pm",
+		finish: "4.55 pm",
+		event: "Closing Remarks",
+		presenter: "Prof Muyiwa Falaiye (Director, IADS, UNILAG)",
+	},
+	{
+		start: "4.55pm",
+		finish: "5.00pm",
+		event: "Vote of Thanks",
+		presenter: "Prof Ayo Yusuff (Head of Research, IADS, UNILAG)",
+	},
+	{
+		start: "5.30pm",
+		finish: "",
+		event: "Dinner/Social gathering",
+		presenter: "",
+	},
+];
+
+const { tag: Element = "h1" } = Astro.props;
+---
+
+<article
+	class="relative [text-wrap:pretty] selection:text-black selection:bg-zinc-100"
+>
+	<div
+		class="prose prose-zinc prose-invert mx-auto pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16"
+	>
+		<table class="text-lg font-cond text-zinc-100">
+			<tbody>
+				<tr
+					class="flex flex-col items-center lg:flex-row lg:justify-between"
+				>
+					<td class="p-0">Platform 1: Lagos</td>
+					<td class="p-0 lg:text-right"
+						>UNILAG / University of Exeter</td
+					>
+				</tr>
+			</tbody>
+		</table>
+		<div class="py-20">
+			<div class="flex justify-center">
+				<a href="/" class="transition-opacity hover:opacity-50">
+					<Image
+						src={logo2}
+						alt="Atlantica Logo"
+						widths={[300, 600, 900]}
+						class="h-16 w-[256px] object-contain mb-0"
+					/>
+				</a>
+			</div>
+			<p class="lead text-center text-zinc-100 font-cond mb-8">
+				<span class="font-bold">UNILAG-Exeter Atlantica Symposium</span>
+				<br />
+				Institute of African and Diaspora Studies
+			</p>
+			<Element class="text-center font-exp uppercase my-0 text-4xl">
+				Seen from Lagos
+			</Element>
+			<p class="text-3xl text-center text-zinc-100 mb-0 font-exp mt-4">
+				African Re-groundings
+			</p>
+		</div>
+
+		<div class="text-zinc-300 font-exp lead pb-10">
+			<p class="mb-0 font-exp font-normal">
+				Dates:
+				<br />
+				<span class="font-exp font-bold"
+					>Tuesday 25 - Wednesday 26 June 2024</span
+				>
+			</p>
+
+			<p class="mb-0 font-exp font-normal">
+				Venue:
+				<br />
+				<span class="font-exp font-bold">
+					Arthur Mbanefo Digital Research Centre(AMDRC)<br
+					/>University of Lagos (UNILAG)
+				</span>
+			</p>
+
+			<p class="mb-0 font-exp font-normal">
+				Teams link:
+				<br />
+				<span class="font-exp font-bold">
+					<a class="font-bold" href="https://rb.gy/at433c"
+						>https://rb.gy/at433c</a
+					>
+				</span>
+			</p>
+		</div>
+		<h2 class="text-3xl font-exp font-bold">Programme of Events</h2>
+	</div>
+	<section class="relative mx-auto pb-16 px-4 md:px-8 md:pb-32 max-w-[900px]">
+		<h3 class="font-exp text-2xl font-bold mb-6">Tuesday 25th</h3>
+		<header
+			class="sticky top-0 bg-white text-blue-950 sm:grid sm:gap-2 sm:grid-cols-5 py-2 hidden font-exp font-bold"
+		>
+			<p class="mx-2">Time</p>
+			<p class="sm:col-span-2 mx-2">Event</p>
+			<p class="sm:col-span-2 mx-2">Presenter</p>
+		</header>
+		<ul class="border-t border-white sm:border-0">
+			{
+				day1.map((d) => (
+					<li class="sm:grid sm:gap-2 sm:grid-cols-5 space-y-4 sm:space-y-0 py-4 border-b border-white">
+						<div class="mx-2">
+							{d.start}–{d.finish}
+						</div>
+						<div
+							class="sm:col-span-2 space-y-4 mx-2"
+							set:html={d.event}
+						/>
+						<div
+							class="sm:col-span-2 space-y-4 mx-2"
+							set:html={d.presenter}
+						/>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+	<section class="relative mx-auto pb-8 px-4 md:px-8 md:pb-16 max-w-[900px]">
+		<h3 class="font-exp text-2xl font-bold mb-6">Wednesday 26th</h3>
+		<header
+			class="sticky top-0 bg-white text-blue-950 sm:grid sm:gap-2 sm:grid-cols-5 py-2 hidden font-exp font-bold"
+		>
+			<p class="mx-2">Time</p>
+			<p class="sm:col-span-2 mx-2">Event</p>
+			<p class="sm:col-span-2 mx-2">Presenter</p>
+		</header>
+		<ul class="border-t border-white sm:border-0">
+			{
+				day2.map((d) => (
+					<li class="sm:grid sm:gap-2 sm:grid-cols-5 space-y-4 sm:space-y-0 py-4 border-b border-white">
+						<div class="mx-2">
+							{d.start}–{d.finish}
+						</div>
+						<div
+							class="sm:col-span-2 space-y-4 mx-2"
+							set:html={d.event}
+						/>
+						<div
+							class="sm:col-span-2 space-y-4 mx-2"
+							set:html={d.presenter}
+						/>
+					</li>
+				))
+			}
+		</ul>
+	</section>
+	<div
+		class="prose prose-zinc prose-invert mx-auto pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16"
+	>
+		<p class="lead text-zinc-300">
+			The first <em>Atlantica</em> platform, <em>Seen from Lagos</em> is oriented
+			towards the future in its exploration of solutions and routes through
+			barriers which we find in the contemporary academy. It begins with the
+			fear identified by Muyiwa Falaiye in his 2017 essay “Is African Studies
+			Afraid of African Philosophy?” If even specialised branches of Area Studies
+			devoted to the study of Africa are either ignorant of, or uneasy in dealing
+			with, theories, concepts and methods drawn from African knowledge systems,
+			what hope is there for the broader fields of the Humanities and the Social
+			Sciences?
+		</p>
+		<p>
+			While the subsequent years since the publication of Falaiye’s
+			article have vibrantly trailed the rise of a “decolonial turn,”
+			particularly in institutions in the Global North, there is scant
+			evidence that academic disciplines have shown any appetite to find
+			new ways to think from or with modes of thought from the Global
+			South. Equally noteworthy is the inadequacy of mutually conceived
+			intentional conversations bridging knowledge spaces of the Global
+			South. Though unacknowledged, this is partly a function of the
+			difficulties entailed in both unlearning existing modes of
+			perceiving the world, and navigating through various entanglements
+			of subjectivities, alongside the hard graft needed in opening one’s
+			mind to understanding through other languages, concepts and modes of
+			being.
+		</p>
+		<p>
+			This platform directly addresses such deficits through the provision
+			of case studies which it hopes will inspire others to see the
+			expected awakening which can arrive through approaches to knowledge
+			creation which find inspiration in specific schools of thinking or
+			praxis from the African continent. As such, it encourages the
+			submission of philosophical studies which are able to engage
+			prevalent pedagogies, explore and situate the value of indigenous
+			epistemologies; not necessarily divorcing them from broader currents
+			within their academic fields, though naming and enumerating their
+			specific utility.
+		</p>
+		<p>
+			A second originating position lies in the study of art, both through
+			forms of cultural practice and in the discipline of the history of
+			art as it has been reconstrued by African – and especially Nigerian
+			– writers such as Chika Okeke-Agulu and Rowland Ọlá Abíọ́dún.
+			Beginning with this latter thinker, we take seriously his admonition
+			that we are faced with the “urgent task” not simply of documenting
+			global differences but ensuring “the survival and essential role of
+			African artistic and aesthetic concepts in the study of art in
+			Africa.” For this to happen, Abíọ́dún proposes a progressive
+			abandonment of the conventional methods of the Western humanities,
+			for their tendency is one of “concealing and even eliminating the
+			social and religio-aesthetic foundation of the visual arts.”
+		</p>
+		<p>
+			Looking beyond Africa towards other exemplars, we are able to see
+			the manner in which fundamental notions of time, history and
+			aesthetics have been upended in quite general, as well as scholarly,
+			fashions in locales such as Australia, where indigenous modes of
+			artistic production have induced paradigmatic changes in thought.
+			Similar tendencies can also be seen in specialised fields of study
+			in Islamic art, in which the specificity of forms of Muslim
+			spiritual enlightenment are prized above the emplacement of works of
+			art within Western frames of knowledge.
+		</p>
+		<p>
+			Returning to Nigeria, it is arguable that one of the greatest
+			conceptual gains which has emerged through the creation of
+			indigenous forms of modernism by groups such as the Nsukka School
+			has been their imagination of cultural production as a marriage of
+			forms. Far from precluding deeper understandings of indigenous
+			knowledge, fine art presents opportunities to disseminate such
+			understandings in new fashions, to both local and international
+			audiences. Relatedly, the degree to which an easy interchange across
+			the study and making of art – evinced at UNILAG in the work of Peju
+			Layiwola and others – reflects a positive belief in the ideal of
+			conceptual and embodied forms of knowledge-making working in tandem.
+		</p>
+		<p>
+			We therefore invite contributions to this event which may take the
+			form of academic papers or artistic, curatorial or other forms of
+			intervention. Our overarching goal is to move our fields forward so
+			that no one should be afraid of African thought today, while some of
+			its manifold facets might begin to be better understood at and
+			through this symposium.
+		</p>
+		<hr />
+		<p>
+			<em>Seen from Lagos</em> is the first in a new series of <em
+				>Atlantica</em
+			> platforms, building towards a pan-Atlantic biennial of contemporary
+			art and critical enquiry. Working with artists, writers and communities,
+			<em>Atlantica</em> aims to re-examine the multiple histories and ‘historical
+			presents’ of the Atlantic from diverse contemporary perspectives, challenging
+			the supposedly ‘universal’ knowledge system that inherently privileges
+			a Eurocentric worldview. In contesting the totalising claims and epistemic
+			violence of North Atlantic modernity, the ‘pluriversalism’ of the South
+			also puts into question the temporalities and relationalities which have
+			defined Western culture. In their place, new forms of knowledge are required,
+			and with them new forms of subjectivity and new ways of imagining the
+			future.
+		</p>
+		<a href="/">atlantica.art</a>
+		<hr />
+		<h2 class="font-exp">
+			Call for proposals to be submitted by Monday 18th March 2024
+		</h2>
+		<p>For paper proposals please submit:</p>
+		<ul>
+			<li>
+				A summary of the proposed contribution (250-300 words), clearly
+				setting out the paper’s conceptual framework, central argument,
+				methodological approach, and contribution to the state of
+				knowledge in the field;
+			</li>
+			<li>
+				Your name, affiliation, contact details, and a short bio (50
+				words).
+			</li>
+		</ul>
+		<p>
+			Please also indicate if you plan to attend the symposium in person
+			or if you would prefer to make a virtual presentation online.
+		</p>
+		<hr />
+		<h2 class="font-exp">Creative Practices and Performances</h2>
+		<p>
+			Proposed events of interventions could include readings, music,
+			sonic art, digital art, dance, audio-visual, multimedia and other
+			artistic performances. Proposals should be roughly two pages in
+			length. Page 1 should provide a description of the performance along
+			with links to any supporting materials. Page 2 should provide a
+			detailed technical overview that clearly states what equipment you
+			need from us and what you can provide yourself. Proposals will be
+			assessed for technical feasibility.
+		</p>
+		<h3 class="font-exp">Please email all submissions to:</h3>
+		<p>
+			<a href="mailto:iads@unilag.edu.ng">iads@unilag.edu.ng</a> + <a
+				href="mailto:atlantica@exeter.ac.uk">atlantica@exeter.ac.uk</a
+			>
+		</p>
+	</div>
+</article>
