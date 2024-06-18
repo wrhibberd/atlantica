@@ -2,6 +2,10 @@
 import { Image } from "astro:assets";
 import logo2 from "../assets/logos/Atlantica_Logo_White_1.png";
 
+import uol from "../assets/logos/uol.png";
+import ioads from "../assets/logos/iads.svg";
+import uoe from "../assets/logos/uoe.svg";
+
 const day1 = [
 	{
 		start: "8.30am",
@@ -21,7 +25,7 @@ const day1 = [
 		finish: "9.25am",
 		event: "Opening remarks",
 		presenter:
-			"<strong>Prof Folasade Ogunsola</strong><br />, Vice Chancellor, UNILAG",
+			"<strong>Prof Folasade Ogunsola</strong><br />(Vice Chancellor, UNILAG)",
 	},
 	{
 		start: "9.25am",
@@ -32,7 +36,7 @@ const day1 = [
 	{
 		start: "9.30am",
 		finish: "10.30am",
-		event: "Keynote Address",
+		event: "With my Toes in the Soil: From a Plateau to a Spiritual Atlantica",
 		presenter:
 			"<strong>Prof Ruth Simbao</strong><br />(National Research Foundation SARChI Chair in Geopolitics and the Arts of Africa, Rhodes University, RSA)",
 	},
@@ -135,7 +139,7 @@ const day2 = [
 	{
 		start: "9.10am",
 		finish: "10.00 am",
-		event: "In Conversation with <strong>Azu Nwagbogu</strong> (Director, African Artists Foundation/LagosPhoto)",
+		event: "Lead Speaker, <strong>Azu Nwagbogu</strong> (Director, African Artists Foundation/LagosPhoto) in conversation",
 		presenter:
 			"Chair:  <strong>Prof Tom Trevor</strong><br />(Contemporary Art & Curation, University of Exeter)",
 	},
@@ -464,6 +468,27 @@ const { tag: Element = "h1" } = Astro.props;
 			with the support of Prof Ayodele Yusuff and Ms. Bolatito Kolawole. The
 			<i>Atlantica</i> series is convened by Prof Tom Trevor.
 		</p>
-		<hr />
+		<div
+			class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 bg-white justify-between items-center p-4"
+		>
+			<Image
+				src={uol}
+				alt="University of Lagos"
+				widths={[300, 600, 900]}
+				class="w-[120px] my-0"
+			/>
+			<Image
+				src={ioads}
+				alt=""
+				widths={[300, 600, 900]}
+				class="w-[120px] h-[120px] object-fill my-0"
+			/>
+			<Image
+				src={uoe}
+				alt=""
+				widths={[300, 600, 900]}
+				class="w-[280px] object-fill my-0"
+			/>
+		</div>
 	</div>
 </article>
