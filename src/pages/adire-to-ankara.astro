@@ -1,15 +1,14 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Menu from "../components/Menu.astro";
-import SeenFromLagos from "../components/content/SeenFromLagos.astro";
+import AdireToAnkara from "../components/content/AdireToAnkara.astro";
 
 import { Image } from "astro:assets";
 import bgImage from "../assets/images/seen-from-lagos/peju.jpg";
 
-const title = "Atlantica – Seen from Lagos";
+const title = "Atlantica – Adire-to-Ankara";
 const description =
-	"UNILAG-Exeter Atlantica Symposium – Institute of African and Diaspora Studies";
-// "Call for Participation in the inaugural platform of the Atlantica series 25-26 June 2024 at University of Lagos (UNILAG), Nigeria";
+	"Ahmadu Bello University (ABU) - University of Exeter (UoE) Atlantica symposium";
 ---
 
 <Layout {title} {description}>
@@ -19,14 +18,14 @@ const description =
 				src={bgImage}
 				alt="Adire fabric pattern"
 				widths={[300, 600, 900]}
-				class="h-full w-full object-cover"
+				class="h-full w-full object-cover invert"
 			/>
 			<div
 				class="inset-0 bg-gradient-to-t from-black to-sky-900 mix-blend-multiply fixed"
 			>
 			</div>
 		</div>
-		<SeenFromLagos />
+		<AdireToAnkara />
 	</main>
 	<Menu />
 </Layout>

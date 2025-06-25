@@ -1,0 +1,275 @@
+---
+import { Image } from "astro:assets";
+import logo2 from "../../assets/logos/Atlantica_Logo_White_2.png";
+
+import image1 from "../../assets/images/symposium-two/MS79_445.jpg";
+
+const schedule = [
+	{
+		start: "11.00am",
+		event: "Registration & coffee",
+	},
+	{
+		start: "11.30am",
+		event: "Welcome, William Gallois, UoE",
+	},
+	{
+		start: "11.40am",
+		event: "<p>Zainab Bello, ABU<br/>Video screening<br/><em>De-colonising Hausa-Fulani Textiles</em></p>",
+	},
+	{
+		start: "11.40am",
+		event: "<p>Video screening<br/><em>De-colonising Hausa-Fulani Textiles</em></p>",
+	},
+	{
+		start: "12.20pm",
+		event: "<p>James Downs, Special Collections, UoE<br/><em>Jean Trevor Archive</em></p>",
+	},
+	{
+		start: "12.35pm",
+		event: "<p>In conversation with Tom Trevor, UoE</p>",
+	},
+	{
+		start: "12.45pm",
+		event: "<p>Lunch<br/>viewing material from the Jean Trevor Archive</p>",
+	},
+	{
+		start: "1.45pm",
+		event: "<p>Peju Layiwola, UNILAG<br/><em>Reimagining Indigo video screening</em></p>",
+	},
+	{
+		start: "2.00pm",
+		event: "<p>Peju Layiwola (online)<br/><em>Adire and Yoruba material culture</em></p>",
+	},
+	{
+		start: "2.20pm",
+		event: "<p>In conversation with Zainab Bello, ABU</p>",
+	},
+	{
+		start: "2.40pm",
+		event: "<p>Oyindamola Faithful, CCA Lagos (online)<br/><em>Àsìkò Art School</em></p>",
+	},
+	{
+		start: "3.00pm",
+		event: "<p>Q&A, chaired by William Gallois</p>",
+	},
+	{
+		start: "3.30pm",
+		event: "<p>Close & refreshments</p>",
+	},
+];
+
+const { tag: Element = "h1" } = Astro.props;
+---
+
+<article
+	class="relative [text-wrap:pretty] selection:text-black selection:bg-zinc-100"
+>
+	<div
+		class="prose prose-zinc prose-invert mx-auto pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16"
+	>
+		<table class="text-lg font-cond text-zinc-100">
+			<tbody>
+				<tr
+					class="flex flex-col items-center lg:flex-row lg:justify-between"
+				>
+					<td class="p-0">Ahmadu Bello University (ABU)</td>
+					<td class="p-0 lg:text-right"
+						>University of Exeter (UoE) <em>Atlantica</em> symposium</td
+					>
+				</tr>
+			</tbody>
+		</table>
+		<div class="py-20">
+			<div class="flex justify-center">
+				<a href="/" class="transition-opacity hover:opacity-50">
+					<Image
+						src={logo2}
+						alt="Atlantica Logo"
+						widths={[300, 600, 900]}
+						class="h-16 w-[256px] object-contain mb-0"
+					/>
+				</a>
+			</div>
+			<Element class="text-center font-exp mb-0 text-4xl mt-[1.2em]">
+				Adire-to-Ankara
+			</Element>
+			<p
+				class="lead text-center text-zinc-100 font-cond mb-8 [text-wrap:balance]"
+			>
+				<span class="font-bold"
+					>Decolonizing the Study of Material Cultures in Northern and
+					South-Western Nigeria:</span
+				>
+				<br />
+				Hausa-Fulani and Yoruba textile traditions and the Àsìkò Art School
+			</p>
+		</div>
+		<div class="text-zinc-300 font-exp lead pb-10">
+			<p class="mb-0 font-exp font-normal">
+				Date:
+				<br />
+				<span class="font-exp font-bold">Monday 30 June, 11-3.30pm</span
+				>
+			</p>
+
+			<p class="mb-0 font-exp font-normal">
+				Venue:
+				<br />
+				<span class="font-exp font-bold">
+					Reed Hall, University of Exeter
+				</span>
+			</p>
+
+			<p class="mb-0 font-exp font-normal">
+				Teams link:
+				<br />
+				<span class="font-exp font-bold">
+					<a class="font-bold" href="https://tinyurl.com/ms94heum"
+						>https://tinyurl.com/ms94heum</a
+					>
+				</span>
+			</p>
+		</div>
+	</div>
+	<div class="px-4 pb-8 md:px-8 md:pb-16 mx-auto max-w-[900px]">
+		<Image
+			src={image1}
+			alt="Atlantica Logo"
+			widths={[300, 600, 900]}
+			class="w-full"
+		/>
+	</div>
+	<div
+		class="prose prose-zinc prose-invert mx-auto pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16"
+	>
+		<p>
+			The Hausa-Fulani and Yoruba cultures in Nigeria have distinct
+			textile traditions, though they have also influenced each other
+			strongly. Hausa weaving, dyeing, and embroidery are renowned for
+			high-quality cotton fabrics, while contemporary Yoruba textile
+			culture incorporates European and Asian fabrics and uses silks and
+			cotton for garments. Indigo tie-dye, a traditional resist dyeing
+			technique, is prominent in both Hausa-Fulani and Yoruba textiles,
+			particularly in the form of Adire (Yoruba) and similar practices
+			among the Hausa. Dutch wax prints, also known as African wax prints
+			or Ankara, hold significant cultural meaning in both
+			traditions. They are more than just fabric; they are a form of
+			visual language, a means of communication, and a symbol of identity.
+			This half-day symposium will seek to explore how colonialism worked
+			to uproot and reinterpret such traditions - a form of epistemic
+			violence described by Ngugi Wa Thiongo (1986) as a "cultural bomb” -
+			and how contemporary artists, curators and scholars are seeking to
+			resist such appropriation, to decolonize indigenous culture in West
+			Africa and to offer an alternative, culturally rooted approach.
+		</p>
+		<p>
+			<strong>Zainab Bello</strong>, based at Ahmadu Bello University in
+			Zaria, focuses on the impact of colonialism on Hausa-Fulani textile
+			cultures, and how this has diminished the role of wax prints in
+			conveying traditional Hausa folktales, leading to a growing
+			disregard for indigenous identity and heritage. <strong
+				>Peju Layiwola</strong
+			>, Professor of Art History at the University of Lagos, is currently
+			Mellon Curatorial Fellow at the Stanley Museum of Art, University of
+			Iowa, and has researched extensively into the social history
+			of adire fabrics and its importance in Yoruba culture, including
+			through her own artistic practice and exhibition-making. <strong
+				>Oyindamola Faithful</strong
+			> is Executive and Artistic Director of the Centre for Contemporary Art
+			(CCA) Lagos and curator of the Àsìkò Art School, an experimental art-school
+			project for artists and curators living and working in Africa which engages
+			with indigenous cultural practices whilst also exploring contemporary
+			art across the continent, fostering critical dialogue and innovation.
+		</p>
+		<p>
+			In relation to this topic, the University of Exeter has a unique and
+			fascinating archive in Special Collections that documents the work
+			of <strong>Jean Trevor</strong> with Hausa girls and young women in northern
+			Nigeria during the 1960s and early 1970s, when she was based between
+			Ahmadu Bello University and the University of Exeter. The papers, photographs,
+			correspondence and other documents in the Jean Trevor Archive provide
+			insights into different aspects of Nigerian life during this period,
+			including developments in both secondary and higher education, agricultural
+			methods, Islamic movements, colonialism and the British relations with
+			African countries at the end of the empire, as well as community health,
+			textiles and costume, marriage customs and popular culture. To mark the
+			50th anniversary of the death of Jean Trevor this month, the symposium
+			will be accompanied by a small display of materials from the archive,
+			as well as a discussion of her work and its continuing relevance led
+			by archivist, <strong>James Downs</strong>.
+		</p>
+		<p>
+			Please see James Downes’ blog about the Jean Trevor Archive at
+			University of Exeter <a
+				href="https://specialcollections.exeter.ac.uk/2025/05/08/the-jean-trevor-archive-eul-ms-79-hausa-fulani-culture-islam-and-female-education-in-nigeria/"
+				target="_blank"
+				aria-label="James Downes’ blog about the Jean Trevor Archive at
+			University of Exeter"
+				>here</a
+			>.
+		</p>
+	</div>
+	<section
+		class="relative mx-auto pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16 max-w-[900px]"
+	>
+		<h2 class="text-3xl font-exp font-bold pb-4 md:pb-8">Schedule</h2>
+		<header
+			class="sticky top-0 bg-white text-blue-950 sm:grid sm:gap-2 sm:grid-cols-5 py-2 hidden font-exp font-bold"
+		>
+			<p class="mx-2">Time</p>
+			<p class="sm:col-span-4 mx-2">Event</p>
+		</header>
+		<ul class="border-t border-white sm:border-0">
+			{
+				schedule.map((d) => (
+					<li class="sm:grid sm:gap-2 sm:grid-cols-5 space-y-4 sm:space-y-0 py-4 border-b border-white">
+						<div class="mx-2">{d.start}</div>
+						<div
+							class="sm:col-span-4 space-y-4 mx-2"
+							set:html={d.event}
+						/>
+					</li>
+				))
+			}
+		</ul>
+		<div class="prose prose-zinc prose-invert">
+			<p class="pt-4 md:pt-8">
+				To register to attend virtually or in person please email
+				<a href="mailto:atlantica@exeter.ac.uk"
+					>atlantica@exeter.ac.uk</a
+				>
+			</p>
+		</div>
+	</section>
+	<div
+		class="prose prose-zinc prose-invert mx-auto pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16"
+	>
+		<div class="text-zinc-300 font-exp lead pb-10">
+			<p class="mb-0 font-exp font-normal">
+				Date:
+				<br />
+				<span class="font-exp font-bold">Monday 30 June, 11-3.30pm</span
+				>
+			</p>
+
+			<p class="mb-0 font-exp font-normal">
+				Venue:
+				<br />
+				<span class="font-exp font-bold">
+					Reed Hall, University of Exeter
+				</span>
+			</p>
+
+			<p class="mb-0 font-exp font-normal">
+				Teams link:
+				<br />
+				<span class="font-exp font-bold">
+					<a class="font-bold" href="https://tinyurl.com/ms94heum"
+						>https://tinyurl.com/ms94heum</a
+					>
+				</span>
+			</p>
+		</div>
+	</div>
+</article>

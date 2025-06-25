@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Menu from "../components/Menu.astro";
 import ChangingLogo from "../components/ChangingLogo.astro";
-import SymposiumInformation from "../components/SymposiumInformation.astro";
+import AdireToAnkara from "../components/content/AdireToAnkara.astro";
 
 import { Image } from "astro:assets";
 import bgImage from "../assets/images/seen-from-lagos/peju.jpg";
@@ -65,7 +65,7 @@ const description =
 				src={bgImage}
 				alt="Adire fabric pattern"
 				widths={[300, 600, 900]}
-				class="h-full w-full object-cover"
+				class="h-full w-full object-cover invert"
 			/>
 			<div
 				class="inset-0 bg-gradient-to-t from-black to-sky-900 mix-blend-multiply absolute"
@@ -74,7 +74,7 @@ const description =
 		</div>
 
 		<div id="UNILAG" class="mt-[100vh] relative w-full h-screen">
-			<SymposiumInformation tag="h2" />
+			<AdireToAnkara tag="h2" />
 		</div>
 	</main>
 	<Menu />
