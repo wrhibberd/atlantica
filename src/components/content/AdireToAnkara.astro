@@ -19,10 +19,6 @@ const schedule = [
 		event: "<p>Zainab Bello, ABU<br/>Video screening<br/><em>De-colonising Hausa-Fulani Textiles</em></p>",
 	},
 	{
-		start: "11.40am",
-		event: "<p>Video screening<br/><em>De-colonising Hausa-Fulani Textiles</em></p>",
-	},
-	{
 		start: "12.20pm",
 		event: "<p>James Downs, Special Collections, UoE<br/><em>Jean Trevor Archive</em></p>",
 	},
@@ -135,25 +131,31 @@ const { tag: Element = "h1" } = Astro.props;
 	</div>
 
 	<div class="px-4 pb-8 md:px-8 md:pb-16 mx-auto max-w-[1800px]">
-		<div class="flex gap-4 md:gap-8">
-			<figure class="w-3/4">
+		<div class="flex flex-col md:flex-row gap-4 md:gap-8">
+			<figure class="w-full md:w-3/4">
 				<Image
 					src={image1}
 					alt="A group of men in traditional West African attire pose outdoors in front of an arched building, with one seated figure in the center."
 					widths={[300, 600, 900]}
 					class="h-full w-full object-cover"
 				/>
+				<figcaption class="md:hidden">
+					<p class="text-sm pt-2">Jean Trevor Archive, c. 1968.</p>
+				</figcaption>
 			</figure>
-			<figure class="w-1/4">
+			<figure class="w-full md:w-1/4">
 				<Image
 					src={image2}
 					alt="A woman wearing patterned clothing, a white shawl over her head, bead jewelry, and a green bracelet looks down during an outdoor gathering."
 					widths={[300, 600, 900]}
 					class="h-full w-full object-cover"
 				/>
+				<figcaption class="md:hidden">
+					<p class="text-sm pt-2">Jean Trevor Archive, c. 1968.</p>
+				</figcaption>
 			</figure>
 		</div>
-		<p class="text-sm pt-2">Jean Trevor Archive, c. 1968.</p>
+		<p class="text-sm pt-2 max-md:hidden">Jean Trevor Archive, c. 1968.</p>
 	</div>
 	<div
 		class="prose prose-zinc prose-invert mx-auto pt-4 pb-8 px-4 md:pt-8 md:px-8 md:p-16"
